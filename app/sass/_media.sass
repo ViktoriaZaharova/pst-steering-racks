@@ -1,0 +1,294 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px)
+  h1
+    font-size: 30px
+
+  .contacts-box
+    margin: 0 20px
+
+  .price
+    font-size: 20px
+
+  .product-card .btn
+    max-width: 120px
+
+  .stages-orders
+    padding: 70px 0
+
+  .callback-section
+    padding: 50px 0
+
+  .callback-section__img
+    max-width: 280px
+    min-width: 280px
+    margin: 0 -10px -85px -15px
+
+  .slick-prev
+    left: 10px
+
+  .slick-next
+    right: 10px
+
+  .delivery-box__body
+    padding: 20px 30px
+
+  footer
+    .phone
+      font-size: 18px
+    .address
+      font-size: 14px
+      max-width: 145px
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px)
+  h1
+    font-size: 26px
+
+  header
+    .menu
+      display: none
+
+    .logo
+      margin: 0 auto 0 0
+
+  .btn-burger
+    display: block
+
+  .callback-section__content
+    max-width: none
+    width: 100%
+    margin: 0 0 30px
+    .box-text
+      font-size: 16px
+      max-width: none
+
+  .callback-section
+    .callback-box
+      margin: 0 auto 0 0
+      max-width: 450px
+
+  h2
+    font-size: 32px
+
+  .catalog-box
+    height: 180px
+
+  .delivery
+    h2
+      margin: 0 0 40px
+
+  .delivery-box
+    h3
+      font-size: 20px
+    &__icon
+      padding: 20px
+      width: 140px
+      height: 140px
+    &__body
+
+      width: calc(100% - 140px)
+
+  .copyright
+    margin: 0 auto
+
+  .mail
+    margin: 0 20px
+
+  footer
+    padding: 30px 0
+    .address
+      margin: 0 0 0 20px
+    .mail
+      font-size: 14px
+    .phone
+      font-size: 16px
+
+  .document-requisites
+    margin: 0 0 0 20px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px)
+  .home-content
+    padding: 30px
+    margin: 0 auto 30px
+
+    .box-text
+      margin: 30px 0 0
+      font-size: 14px
+      line-height: normal
+
+  .callback-box
+    max-width: none
+
+  .home
+    padding: 60px 0 90px
+
+  header
+    .address
+      display: none
+
+  h1, h2
+    font-size: 24px
+
+  h2
+    margin: 0 0 25px
+
+  .advantages-box
+    padding: 30px 25px
+    h3
+      font-size: 20px
+    &__icon
+      margin: 0 auto 20px
+
+  .advantages
+    padding: 0 0 40px
+
+  .product-card
+    .box-text
+      margin: 0 0 20px
+    .btn
+      max-width: 110px
+
+  .price
+    font-size: 18px
+
+  .stages-orders
+    h2
+      margin: 0 0 40px
+  .stages-orders-box
+    &__num
+      font-size: 70px
+      margin: -20px 0 0
+    .box-text
+      max-width: none
+    h3
+      font-size: 20px
+      margin: 0 0 15px
+
+  .manufacture-box
+    width: 450px
+    height: 300px
+
+  .slick-arrow
+    width: 40px
+    min-width: 40px
+    height: 40px
+    padding: 13px
+
+  .callback-section
+    margin: 50px 0
+    .callback-box
+      max-width: none
+    .callback-section__img
+      display: none
+
+  .catalog
+    h2
+      margin: 0 0 30px
+
+  .delivery
+    margin: 0 0 40px
+
+  .delivery-box
+    margin: 0 auto 40px
+
+  footer
+    .phone, .mail
+      width: 33.3%
+      text-align: center
+      margin: 0
+
+    .footer-box, .address, .list-social
+      width: 33.3%
+      order: 1
+      margin: 10px 0 0
+      max-width: none
+      .phone
+        width: 100%
+        text-align: left
+
+  .footer-bottom
+    padding: 20px 0 0
+    margin: 20px 0 0
+
+  .document-requisites
+    margin: 0 0 10px
+    width: 50%
+
+  .copyright
+    margin: 0 auto 0 0
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px)
+  .slider-nav
+    margin: 20px 0 0
+    justify-content: flex-start
+
+  .manufacture-slider
+    margin: 30px 0 0
+
+  .catalog
+    padding: 0 0 60px
+
+  footer
+    .phone
+      width: fit-content
+      margin: 0 0 0 auto
+    .footer-box, .address, .list-social, .mail
+      width: 100%
+      text-align: left
+      margin: 10px 0 0
+
+@media only screen and (max-width: 480px)
+  h1
+    font-size: 22px
+
+  header
+    padding: 15px 0
+    .btn
+      display: none
+    .logo
+      margin: 0
+
+    .contacts-box
+      text-align: center
+      margin: 0 auto
+
+  .slider-nav .slick-prev
+    margin: 0 10px 0 0
+
+  .manufacture-box
+    width: 100%
+    margin: 0
+
+  .manufacture-slider
+    min-width: auto
+
+  .delivery-box
+    .box-text
+      font-size: 12px
+    &__icon
+      width: 100px
+      height: 100px
+    &__body
+      width: calc(100% - 100px)
+      padding: 10px 15px
+    h3
+      margin: 0 0 5px
+      font-size: 16px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 420px)
+  .catalog-slider
+    .slick-slide
+      padding: 0
+    .slick-list
+      margin: 0
+
+  .document-requisites
+    width: 100%
