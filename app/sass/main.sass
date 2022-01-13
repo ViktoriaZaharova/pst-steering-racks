@@ -161,6 +161,9 @@ button, .btn
   max-width: 172px
   width: 100%
   text-transform: none
+  &:hover
+    background: $accent
+    color: #fff
 
 .btn-icon
   margin: 0 0 0 21px
@@ -548,15 +551,18 @@ header
     align-items: center
     justify-content: space-between
   .btn
-    max-width: 154px
+    max-width: none
+    width: calc(50% - 10px)
+    text-transform: none
   .box-text
-    margin: 0 0 35px
+    margin: 0 0 9px
     color: $accent
     max-width: 300px
 
 .price
   font-weight: bold
   font-size: 24px
+  margin: 0 0 35px
 
 .btn-load
   margin: 32px auto 0
@@ -664,6 +670,19 @@ header
 /*==========  catalog  ==========*/
 .catalog
   padding: 0 0 77px
+  position: relative
+  //z-index: 1
+  &:before
+    content: ''
+    position: absolute
+    background: url("../img/sr.png") no-repeat center
+      size: 100%
+    opacity: .1
+    left: 50%
+    transform: translate(-50%,0)
+    top: -80px
+    height: 921px
+    width: 2535px
   h2
     margin: 0 0 47px
 

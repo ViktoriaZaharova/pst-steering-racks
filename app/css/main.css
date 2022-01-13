@@ -153,6 +153,9 @@ button, .btn {
   max-width: 172px;
   width: 100%;
   text-transform: none; }
+  .btn-border:hover {
+    background: #19357F;
+    color: #fff; }
 
 .btn-icon {
   margin: 0 0 0 21px;
@@ -601,15 +604,18 @@ header {
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .product-card .btn {
-    max-width: 154px; }
+    max-width: none;
+    width: calc(50% - 10px);
+    text-transform: none; }
   .product-card .box-text {
-    margin: 0 0 35px;
+    margin: 0 0 9px;
     color: #19357F;
     max-width: 300px; }
 
 .price {
   font-weight: bold;
-  font-size: 24px; }
+  font-size: 24px;
+  margin: 0 0 35px; }
 
 .btn-load {
   margin: 32px auto 0; }
@@ -726,7 +732,20 @@ header {
 /*==========  callback-section end  ==========*/
 /*==========  catalog  ==========*/
 .catalog {
-  padding: 0 0 77px; }
+  padding: 0 0 77px;
+  position: relative; }
+  .catalog:before {
+    content: '';
+    position: absolute;
+    background: url("../img/sr.png") no-repeat center;
+      background-size: 100%;
+    opacity: .1;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    top: -80px;
+    height: 921px;
+    width: 2535px; }
   .catalog h2 {
     margin: 0 0 47px; }
 
@@ -943,9 +962,8 @@ footer {
   .contacts-box {
     margin: 0 20px; }
   .price {
-    font-size: 20px; }
-  .product-card .btn {
-    max-width: 120px; }
+    font-size: 20px;
+    margin: 0 0 20px; }
   .stages-orders {
     padding: 70px 0; }
   .callback-section {
@@ -1042,10 +1060,6 @@ footer {
       margin: 0 auto 20px; }
   .advantages {
     padding: 0 0 40px; }
-  .product-card .box-text {
-    margin: 0 0 20px; }
-  .product-card .btn {
-    max-width: 110px; }
   .price {
     font-size: 18px; }
   .stages-orders h2 {
@@ -1099,7 +1113,9 @@ footer {
     margin: 0 0 10px;
     width: 50%; }
   .copyright {
-    margin: 0 auto 0 0; } }
+    margin: 0 auto 0 0; }
+  .catalog:before {
+    top: 0; } }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 576px) {
