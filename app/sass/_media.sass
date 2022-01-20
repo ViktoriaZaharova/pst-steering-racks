@@ -1,8 +1,7 @@
 @import "vars"
 
-/*==========  Desktop First  ==========*/
-
-/* Large Devices, Wide Screens */
+/*==========  Desktop First  ==========/*
+/* Large Devices, Wide Screens
 @media only screen and (max-width: 1200px)
   h1
     font-size: 30px
@@ -10,7 +9,11 @@
   .contacts-box
     margin: 0 20px
 
-  .price
+  /*.price {
+  /*    font-size: 20px; }
+
+  .product-card .btn
+    /*max-width: 120px;
     font-size: 20px
     margin: 0 0 20px
 
@@ -37,12 +40,12 @@
   footer
     .phone
       font-size: 18px
+
     .address
       font-size: 14px
       max-width: 145px
 
-
-/* Medium Devices, Desktops */
+/* Medium Devices, Desktops
 @media only screen and (max-width: 992px)
   h1
     font-size: 26px
@@ -61,14 +64,14 @@
     max-width: none
     width: 100%
     margin: 0 0 30px
+
     .box-text
       font-size: 16px
       max-width: none
 
-  .callback-section
-    .callback-box
-      margin: 0 auto 0 0
-      max-width: 450px
+  .callback-section .callback-box
+    margin: 0 auto 0 0
+    max-width: 450px
 
   h2
     font-size: 32px
@@ -76,20 +79,19 @@
   .catalog-box
     height: 180px
 
-  .delivery
-    h2
-      margin: 0 0 40px
+  .delivery h2
+    margin: 0 0 40px
 
-  .delivery-box
-    h3
-      font-size: 20px
-    &__icon
-      padding: 20px
-      width: 140px
-      height: 140px
-    &__body
+  .delivery-box h3
+    font-size: 20px
 
-      width: calc(100% - 140px)
+  .delivery-box__icon
+    padding: 20px
+    width: 140px
+    height: 140px
+
+  .delivery-box__body
+    width: calc(100% - 140px)
 
   .copyright
     margin: 0 auto
@@ -99,17 +101,20 @@
 
   footer
     padding: 30px 0
+
     .address
       margin: 0 0 0 20px
+
     .mail
       font-size: 14px
+
     .phone
       font-size: 16px
 
   .document-requisites
     margin: 0 0 0 20px
 
-/* Small Devices, Tablets */
+/* Small Devices, Tablets
 @media only screen and (max-width: 768px)
   .home-content
     padding: 30px
@@ -126,39 +131,47 @@
   .home
     padding: 60px 0 90px
 
-  header
-    .address
-      display: none
+  header .address
+    display: none
 
-  h1, h2
+  h1
     font-size: 24px
 
   h2
+    font-size: 24px
     margin: 0 0 25px
 
   .advantages-box
     padding: 30px 25px
+
     h3
       font-size: 20px
-    &__icon
-      margin: 0 auto 20px
+
+  .advantages-box__icon
+    margin: 0 auto 20px
 
   .advantages
     padding: 0 0 40px
 
+  /*.product-card .box-text {
+  /*    margin: 0 0 20px; }
+  /*.product-card .btn {
+  /*    max-width: 110px; }
 
   .price
     font-size: 18px
 
-  .stages-orders
-    h2
-      margin: 0 0 40px
+  .stages-orders h2
+    margin: 0 0 40px
+
+  .stages-orders-box__num
+    font-size: 70px
+    margin: -20px 0 0
+
   .stages-orders-box
-    &__num
-      font-size: 70px
-      margin: -20px 0 0
     .box-text
       max-width: none
+
     h3
       font-size: 20px
       margin: 0 0 15px
@@ -175,14 +188,15 @@
 
   .callback-section
     margin: 50px 0
+
     .callback-box
       max-width: none
+
     .callback-section__img
       display: none
 
-  .catalog
-    h2
-      margin: 0 0 30px
+  .catalog h2
+    margin: 0 0 30px
 
   .delivery
     margin: 0 0 40px
@@ -198,12 +212,15 @@
 
     .footer-box, .address, .list-social
       width: 33.3%
+      -webkit-box-ordinal-group: 2
+      -ms-flex-order: 1
       order: 1
       margin: 10px 0 0
       max-width: none
-      .phone
-        width: 100%
-        text-align: left
+
+    .footer-box .phone, .address .phone, .list-social .phone
+      width: 100%
+      text-align: left
 
   .footer-bottom
     padding: 20px 0 0
@@ -219,10 +236,32 @@
   .catalog:before
     top: 0
 
-/* Extra Small Devices, Phones */
+  .contacts-section-wrapper
+    padding: 20px
+    h3
+      margin: 0 auto 10px
+      text-align: center
+    .box-text
+      max-width: none
+      text-align: center
+    h2
+      text-align: center
+    .form
+      margin: 0 auto
+
+  .map
+    margin: 0 auto 20px
+    max-width: none
+
+  .contacts-section
+    margin: 0 0 50px
+
+/* Extra Small Devices, Phones
 @media only screen and (max-width: 576px)
   .slider-nav
     margin: 20px 0 0
+    -webkit-box-pack: start
+    -ms-flex-pack: start
     justify-content: flex-start
 
   .manufacture-slider
@@ -233,8 +272,11 @@
 
   footer
     .phone
+      width: -webkit-fit-content
+      width: -moz-fit-content
       width: fit-content
       margin: 0 0 0 auto
+
     .footer-box, .address, .list-social, .mail
       width: 100%
       text-align: left
@@ -246,8 +288,10 @@
 
   header
     padding: 15px 0
+
     .btn
       display: none
+
     .logo
       margin: 0
 
@@ -265,24 +309,27 @@
   .manufacture-slider
     min-width: auto
 
-  .delivery-box
-    .box-text
-      font-size: 12px
-    &__icon
-      width: 100px
-      height: 100px
-    &__body
-      width: calc(100% - 100px)
-      padding: 10px 15px
-    h3
-      margin: 0 0 5px
-      font-size: 16px
+  .delivery-box .box-text
+    font-size: 12px
 
-/* Custom, iPhone Retina */
+  .delivery-box__icon
+    width: 100px
+    height: 100px
+
+  .delivery-box__body
+    width: calc(100% - 100px)
+    padding: 10px 15px
+
+  .delivery-box h3
+    margin: 0 0 5px
+    font-size: 16px
+
+/* Custom, iPhone Retina
 @media only screen and (max-width: 420px)
   .catalog-slider
     .slick-slide
       padding: 0
+
     .slick-list
       margin: 0
 

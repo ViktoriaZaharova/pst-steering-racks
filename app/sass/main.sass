@@ -1,41 +1,15 @@
-@import "fonts"
 @import "vars"
+@import "fonts"
 
 *
   -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
   box-sizing: border-box
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
   &:before, &:after
     -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
     box-sizing: border-box
-
-//*::-webkit-input-placeholder
-//  color: #666
-//  opacity: 1
-//
-//*:-moz-placeholder
-//  color: #666
-//  opacity: 1
-//
-//*::-moz-placeholder
-//  color: #666
-//  opacity: 1
-//
-//*:-ms-input-placeholder
-//  color: #666
-//  opacity: 1
-//
-//body input:focus:required:invalid,
-//body textarea:focus:required:invalid
-//  color: #666
-//
-//body input:required:valid,
-//body textarea:required:valid
-//  color: #666
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
   margin: 0
@@ -45,7 +19,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font: inherit
   vertical-align: baseline
 
-/* HTML5 display-role reset for older browsers */
+/* HTML5 display-role reset for older browsers
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
   display: block
 
@@ -55,9 +30,15 @@ ol, ul
 blockquote, q
   quotes: none
 
-blockquote:before, blockquote:after, q:before, q:after
-  content: ''
-  content: none
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
 
 table
   border-collapse: collapse
@@ -68,7 +49,7 @@ body
   min-width: 320px
   position: relative
   line-height: normal
-  font-family: $default-font
+  font-family: "Open Sans", sans-serif
   font-weight: normal
   background: #F4F4F4
 
@@ -86,95 +67,149 @@ img
 a
   display: block
   text-decoration: none
+  -webkit-transition: .3s ease
   transition: .3s ease
   outline: none
 
   &:hover, &:focus
     text-decoration: none
-    
+
 input, textarea, select
   outline: none
+  -webkit-box-shadow: none
   box-shadow: none
+  -webkit-appearance: none
+  -moz-appearance: none
   appearance: none
   padding: 0 15px
+  -webkit-box-sizing: border-box
   box-sizing: border-box
   height: 35px
   width: 100%
   background: transparent
-  border: 1px solid $accent
-    radius: 5px
-  font-family: $default-font
+  border: 1px solid #19357F
+  border-radius: 5px
+  font-family: "Open Sans", sans-serif
   font-size: 12px
   color: #000
 
-  &::placeholder
-    color: #898989
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder, input::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder, input::placeholder, textarea::placeholder, select::placeholder
+  color: #898989
 
+input
   &:hover, &:focus
     outline: none
+    -webkit-box-shadow: none
+    box-shadow: none
+
+textarea
+  &:hover, &:focus
+    outline: none
+    -webkit-box-shadow: none
+    box-shadow: none
+
+select
+  &:hover, &:focus
+    outline: none
+    -webkit-box-shadow: none
     box-shadow: none
 
 label
   display: block
   margin: 0 0 10px
+
   &:last-child
     margin: 0
 
 button, .btn
   outline: none
   padding: 0
+  -webkit-box-shadow: none
   box-shadow: none
-  font-family: $default-font
+  font-family: "Open Sans", sans-serif
   border: none
-    radius: 0
+  border-radius: 0
 
+button
   &:hover, &:focus
     outline: none
+    -webkit-box-shadow: none
     box-shadow: none
 
 .btn
+  &:hover, &:focus
+    outline: none
+    -webkit-box-shadow: none
+    box-shadow: none
+
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
   justify-content: center
   font-size: 12px
   font-weight: bold
   text-transform: uppercase
+  width: -webkit-fit-content
+  width: -moz-fit-content
   width: fit-content
   height: 40px
 
 .btn-accent
   color: #fff
-  background: $accent
+  background: #19357F
   border-radius: 5px
   padding: 0 10px
   max-width: 172px
   width: 100%
+
+  &:hover
+    background: #9F9F9F
+    color: #fff
+
+.btn-white
+  background: #fff
+  padding: 0 10px
+  color: #000000
+  border-radius: 5px
+  max-width: 172px
   &:hover
     background: $grey
     color: #fff
 
 .btn-border
+  -webkit-box-pack: center
+  -ms-flex-pack: center
   justify-content: center
   border: 2px solid #19357F
-    radius: 5px
-  color: $accent
+  border-radius: 5px
+  color: #19357F
   max-width: 172px
   width: 100%
   text-transform: none
+
   &:hover
-    background: $accent
+    background: #19357F
     color: #fff
 
 .btn-icon
   margin: 0 0 0 21px
   max-width: 16px
   width: 100%
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
 
-  
 form
   width: 100%
+
   button
     margin: 17px 0 0
 
@@ -197,7 +232,7 @@ h2
   text-transform: uppercase
   margin: 0 0 34px
   font-size: 36px
-  color: $accent
+  color: #19357F
 
 h3
   text-transform: uppercase
@@ -210,8 +245,10 @@ h3
 .box-text
   font-size: 14px
   line-height: 19px
+
   p
     margin: 0 0 20px
+
     &:last-child
       margin: 0
 
@@ -238,74 +275,110 @@ strong
 .slick-arrow
   position: absolute
   top: 45%
-  transform: translate(0,-50%)
+  -webkit-transform: translate(0, -50%)
+  transform: translate(0, -50%)
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
   justify-content: center
   width: 50px
   min-width: 50px
   height: 50px
   padding: 13px 19px
   border-radius: 10px
-  background: $accent
+  background: #19357F
   opacity: 1
   z-index: 1
+  -webkit-transition: .3s ease
   transition: .3s ease
   cursor: pointer
+
   img
+    -webkit-filter: brightness(0) invert(1)
     filter: brightness(0) invert(1)
+
   &:hover
-    background: $accent
-    border-color: $accent
+    background: #19357F
+    border-color: #19357F
+
     img
+      -webkit-filter: brightness(0) invert(1)
       filter: brightness(0) invert(1)
 
 .slider-nav
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: start
+  -ms-flex-align: start
   align-items: flex-start
+  -webkit-box-pack: end
+  -ms-flex-pack: end
   justify-content: flex-end
+
   .slick-arrow
     position: relative
     top: 0
     left: 0
     right: 0
+    -webkit-transform: none
     transform: none
     border: 2px solid #9F9F9F
-      radius: 10px
+    border-radius: 10px
     background: transparent
+
     img
+      -webkit-filter: none
       filter: none
+
     &:hover
-      background: $accent
-      border-color: $accent
+      background: #19357F
+      border-color: #19357F
+
       img
+        -webkit-filter: brightness(0) invert(1)
         filter: brightness(0) invert(1)
+
   .slick-prev
     margin: 0 26px 0 0
 
 .slick-dots
-
   bottom: 0
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
   justify-content: center
   width: 100%
   margin: 27px 0 0
 
   li
     cursor: pointer
+    -webkit-transition: .3s ease
     transition: .3s ease
     width: 10px
     height: 10px
     margin: 0 20px 0 0
     border: 1px solid #19357F
-      radius: 50%
+    border-radius: 50%
+
     &:last-child
       margin: 0
+
     button
       display: none
+
   .slick-active
-    background: $accent
+    background: #19357F
 
 .slick-prev
   left: -25px
@@ -313,40 +386,50 @@ strong
 .slick-next
   right: -25px
 
-/*==========  header  ==========*/
+/*==========  header  ==========
+
 header
+  -webkit-backdrop-filter: blur(10px)
   backdrop-filter: blur(10px)
   background: rgba(255, 255, 255, 0.9)
   padding: 20px 0
   font-size: 12px
 
 .phone
-  color: $accent
+  color: #19357F
   font-weight: bold
   font-size: 16px
+
   &:hover
-    color: $grey
+    color: #9F9F9F
 
 .btn-burger
   width: 24px
   cursor: pointer
   display: none
   margin: 0 0 0 10px
+
   span
     display: block
     width: 100%
     height: 2px
     border-radius: 3px
-    background: $accent
+    background: #19357F
     margin: 0 0 5px
+
     &:last-child
       margin: 0
 
 .logo
   width: 100%
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
   max-width: 76px
+
   img
     width: 100%
 
@@ -354,31 +437,40 @@ header
   margin: 0 34px 0 57px
 
 .address
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
   font-weight: bold
-
 
 .address-icon
   margin: 0 4px 0 0
 
-
 .menu
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+  -ms-flex-wrap: wrap
   flex-wrap: wrap
   margin: 0 auto
   font-size: 12px
+
   li
     margin: 0 20px 0 0
+
     &:last-child
       margin: 0
+
     a
       color: #000
+
       &:hover
-        color: $accent
-
-
+        color: #19357F
 
 .mobile-menu
   position: fixed
@@ -390,28 +482,37 @@ header
   z-index: 7
   overflow-y: auto
   height: 100%
-  background: $accent
+  background: #19357F
   color: #fff
+  -webkit-box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.15)
   box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.15)
   display: none
+
   a
     color: #fff
+
   .logo
     max-width: 120px
     margin: 0 auto 30px
+
   .address
     margin: 10px 0
+
   .contacts-box
     font-size: 18px
     margin: 20px 0 0
     font-weight: bold
+
   .menu
     font-size: 16px
+
     li
       width: 100%
       margin: 0 0 10px
+
       a
         color: #fff
+
   .list-social
     margin: 20px 0 0
 
@@ -421,6 +522,7 @@ header
   height: 20px
   cursor: pointer
   margin: 0 0 20px auto
+
   &:before, &:after
     content: ''
     position: absolute
@@ -430,22 +532,26 @@ header
     width: 2px
     height: 100%
     border-radius: 3px
+
   &:before
+    -webkit-transform: rotate(45deg)
     transform: rotate(45deg)
+
   &:after
+    -webkit-transform: rotate(135deg)
     transform: rotate(135deg)
 
-/*==========  header end  ==========*/
+/*==========  header end  ==========
+/*==========  home  ==========
 
-
-/*==========  home  ==========*/
 .home
   padding: 73px 0 128px
   position: relative
   z-index: 1
   overflow: hidden
-  background: url("../img/bg1.png") no-repeat center
-    size: 100%
+  background: url("/wp-content/themes/custom/img/bg1.png") no-repeat center
+  background-size: 100%
+
   &:before
     content: ''
     position: absolute
@@ -453,16 +559,17 @@ header
     right: -521px
     height: 1453px
     width: 3085px
-
     z-index: -1
 
 .home-content
   width: 100%
-  background: rgba($accent, .9)
+  background: rgba(25, 53, 127, 0.9)
+  -webkit-box-shadow: 0px 9px 24px rgba(25, 53, 127, 0.2)
   box-shadow: 0px 9px 24px rgba(25, 53, 127, 0.2)
   border-radius: 10px
   color: #fff
   padding: 42px 39px 47px
+
   .box-text
     font-size: 18px
     margin: 46px 0 0
@@ -470,93 +577,133 @@ header
 
 .callback-box
   background: #fff
+  -webkit-box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05)
   box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05)
   border-radius: 10px
   padding: 18px 20px 27px
   max-width: 307px
   width: 100%
   margin: 0 auto
+
   h3
     text-transform: none
 
-/*==========  home end  ==========*/
+/*==========  home end  ==========
+/*==========  advantages  ==========
 
-
-/*==========  advantages  ==========*/
 .advantages
   padding: 0 0 63px
 
 .advantages-box
   width: 100%
   height: 100%
-  background: $accent
+  background: #19357F
   border-radius: 10px
   color: #fff
   text-align: center
   padding: 52px 20px 27px
-  &__icon
-    display: flex
-    align-items: center
-    justify-content: center
-    margin: 0 auto 40px
-    height: 61px
-    img
-      max-height: 100%
+
+.advantages-box__icon
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  margin: 0 auto 40px
+  height: 61px
+
+  img
+    max-height: 100%
+
+.advantages-box
   .box-text
     text-transform: lowercase
+
   h3
     margin: 0 auto 12px
     font-size: 24px
     line-height: normal
-/*==========  advantages end  ==========*/
 
+/*==========  advantages end  ==========
+/*==========  popular  ==========
 
-/*==========  popular  ==========*/
 .product-card
   width: 100%
   height: 100%
   background: #fff
   border-radius: 10px
+  -webkit-box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05)
   box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05)
   padding: 18px 17px 20px
-  &__img
+
+.product-card__img
+  width: 100%
+  height: 231px
+  overflow: hidden
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  border-radius: 5px
+
+  img
     width: 100%
-    height: 231px
-    overflow: hidden
-    display: flex
-    align-items: center
-    justify-content: center
-    border-radius: 5px
-    img
-      width: 100%
-      height: 100%
-      object-fit: cover
-  &__body
-    width: 100%
-    padding: 18px 0 0
-    height: calc(100% - 231px)
-    display: flex
-    flex-direction: column
-  &__title
-    font-size: 18px
-    font-weight: bold
-    color: #000
-    margin: 0 0 9px
-    &:hover
-      color: $accent
-  &__footer
-    margin: auto 0 0
-    width: 100%
-    display: flex
-    align-items: center
-    justify-content: space-between
+    height: 100%
+    -o-object-fit: cover
+    object-fit: cover
+
+.product-card__body
+  width: 100%
+  padding: 18px 0 0
+  height: calc(100% - 231px)
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+
+.product-card__title
+  font-size: 18px
+  font-weight: bold
+  color: #000
+  margin: 0 0 9px
+
+  &:hover
+    color: #19357F
+
+.product-card__footer
+  margin: auto 0 0
+  width: 100%
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+
+.product-card
   .btn
     max-width: none
     width: calc(50% - 10px)
     text-transform: none
+
   .box-text
     margin: 0 0 9px
-    color: $accent
+    color: #19357F
     max-width: 300px
 
 .price
@@ -566,91 +713,117 @@ header
 
 .btn-load
   margin: 32px auto 0
-/*==========  popular end  ==========*/
 
+/*==========  popular end  ==========
+/*==========  stages-orders  ==========
 
-/*==========  stages-orders  ==========*/
 .stages-orders
   padding: 120px 0 115px
+
   h2
     margin: 0 0 60px
 
 .stages-orders-box
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: start
+  -ms-flex-align: start
   align-items: flex-start
+
   .box-text
     font-size: 14px
     max-width: 155px
+
   h3
     font-size: 24px
     margin: 0 0 9px
     line-height: normal
-    color: $accent
-  &__num
-    font-weight: bold
-    color: $accent
-    font-size: 104px
-    text-transform: uppercase
-    margin: -30px 0 0
-  &__body
-    width: calc(100% - 60px)
-    padding: 0 0 0 24px
+    color: #19357F
 
-/*==========  stages-orders end  ==========*/
+.stages-orders-box__num
+  font-weight: bold
+  color: #19357F
+  font-size: 104px
+  text-transform: uppercase
+  margin: -30px 0 0
 
+.stages-orders-box__body
+  width: calc(100% - 60px)
+  padding: 0 0 0 24px
 
-/*==========  manufacture  ==========*/
+/*==========  stages-orders end  ==========
+/*==========  manufacture  ==========
+
 .manufacture-box
   border-radius: 10px
   overflow: hidden
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
   justify-content: center
   margin: 0 20px 0 0
   width: 555px
   height: 413px
+
   img
     width: 100%
     height: 100%
+    -o-object-fit: cover
     object-fit: cover
 
-.manufacture
-  h2
-    margin: 0
+.manufacture h2
+  margin: 0
 
 .manufacture-slider
   min-width: 2000px
   margin: 42px 0 0
-/*==========  manufacture end  ==========*/
 
+/*==========  manufacture end  ==========
+/*==========  callback-section  ==========
 
-/*==========  callback-section  ==========*/
 .callback-section
   position: relative
   margin: 124px 0 82px
-  background: linear-gradient(0deg, rgba(25, 53, 127, 0.8), rgba(25, 53, 127, 0.8)), url("../img/bg2.jpeg") no-repeat center
-    size: cover
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(25, 53, 127, 0.8)), to(rgba(25, 53, 127, 0.8))), url("/wp-content/themes/custom/img/bg2.jpeg") no-repeat center
+  background: linear-gradient(0deg, rgba(25, 53, 127, 0.8), rgba(25, 53, 127, 0.8)), url("/wp-content/themes/custom/img/bg2.jpeg") no-repeat center
+  background-size: cover
   padding: 76px 0 93px
+
   h2, .box-text
     color: #fff
+
   h2
     margin: 0 0 32px
+
   h3
     font-weight: normal
     font-size: 14px
     line-height: normal
     margin: 0 0 21px
+
   .box-text
     font-size: 18px
     line-height: normal
     max-width: 367px
+
   .callback-box
     margin: 0 0 0 auto
 
 .callback-section-wrapper
   width: 100%
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+  -ms-flex-wrap: wrap
   flex-wrap: wrap
 
 .callback-section__content
@@ -664,116 +837,158 @@ header
   position: relative
   z-index: 1
 
-/*==========  callback-section end  ==========*/
+/*==========  callback-section end  ==========
+/*==========  catalog  ==========
 
-
-/*==========  catalog  ==========*/
 .catalog
   padding: 0 0 77px
   position: relative
-  //z-index: 1
+
   &:before
     content: ''
     position: absolute
-    background: url("../img/sr.png") no-repeat center
-      size: 100%
+    background: url("/wp-content/themes/custom/img/sr.png") no-repeat center
+    background-size: 100%
     opacity: .1
     left: 50%
-    transform: translate(-50%,0)
+    -webkit-transform: translate(-50%, 0)
+    transform: translate(-50%, 0)
     top: -80px
     height: 921px
     width: 2535px
+
   h2
     margin: 0 0 47px
 
 .catalog-slider
   .slick-slide
     padding: 0 10px
+
   .slick-list
     margin: 0 -10px
 
 .catalog-box
-
   border-radius: 10px
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
   justify-content: center
   height: 201px
   overflow: hidden
+
   img
     width: 100%
     height: 100%
+    -o-object-fit: cover
     object-fit: cover
-/*==========  catalog end  ==========*/
 
+/*==========  catalog end  ==========
+/*==========  delivery  ==========
 
-/*==========  delivery  ==========*/
 .delivery
   margin: 0 0 60px
+
   h2
     margin: 0 0 70px
 
 .delivery-box
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
   max-width: 505px
   width: 100%
-  background: $accent
+  background: #19357F
   color: #fff
   border-radius: 10px
   margin: 0 0 60px
-  &__icon
-    margin: -20px 0
-    display: flex
-    align-items: center
-    justify-content: center
-    background: #fff
-    border-radius: 10px
-    width: 180px
-    height: 180px
-    padding: 38px 40px
-    box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05)
-  &__body
-    width: calc(100% - 180px)
-    padding: 29px 39px 20px 60px
+
+.delivery-box__icon
+  margin: -20px 0
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  background: #fff
+  border-radius: 10px
+  width: 180px
+  height: 180px
+  padding: 38px 40px
+  -webkit-box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05)
+  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.05)
+
+.delivery-box__body
+  width: calc(100% - 180px)
+  padding: 29px 39px 20px 60px
+
+.delivery-box
   .box-text
     font-size: 14px
     line-height: normal
+
   h3
     font-size: 24px
     margin: 0 0 8px
     line-height: normal
 
-/*==========  delivery end  ==========*/
+/*==========  delivery end  ==========
+/*==========  footer  ==========
 
-
-/*==========  footer  ==========*/
 .list-social
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
   align-items: center
+
   li
     margin: 0 14px 0 0
+
     &:last-child
       margin: 0
+
     a
+      display: -webkit-box
+      display: -ms-flexbox
       display: flex
+      -webkit-box-align: center
+      -ms-flex-align: center
       align-items: center
+      -webkit-box-pack: center
+      -ms-flex-pack: center
       justify-content: center
 
 footer
   font-size: 12px
-  background: $accent
+  background: #19357F
   color: #fff
   padding: 42px 0 41px
+
   .address
     font-size: 18px
     max-width: 190px
     font-weight: normal
     margin: 0 0 0 42px
+
   a
     color: #fff
+
     &:hover
-      color: $grey
+      color: #9F9F9F
+
   .phone
     color: #fff
     font-size: 24px
@@ -785,44 +1000,46 @@ footer
   font-size: 18px
   margin: 0 40px 0 50px
 
-
 .footer-bottom
   padding: 29px 0 0
   margin: 32px 0 0
   position: relative
   font-size: 9px
   line-height: normal
+
   &:before
     content: ''
     position: absolute
     left: 50%
-    transform: translate(-50%,0)
+    -webkit-transform: translate(-50%, 0)
+    transform: translate(-50%, 0)
     top: 0
     max-width: 1130px
     width: calc(100% - 20px)
     background: #fff
     height: 1px
 
-
-
 .document-requisites
   margin: 0 0 0 37px
+
   &:first-child
     margin: 0
 
 .copyright
   margin: 0 auto 0 89px
-/*==========  footer end  ==========*/
 
-/*==========  modal  ==========*/
+/*==========  footer end  ==========
+/*==========  modal  ==========
+
 .modal-content
   border: none
-    radius: 10px
+  border-radius: 10px
   padding: 30px
 
 .modal-header
   padding: 0
   border: none
+
   .close
     width: 20px
     height: 20px
@@ -833,18 +1050,23 @@ footer
     right: 15px
     top: 15px
     margin: 0
+
     &:before, &:after
       content: ''
       position: absolute
       left: 10px
       top: 0
-      background: $accent
+      background: #19357F
       width: 2px
       height: 100%
       border-radius: 3px
+
     &:before
+      -webkit-transform: rotate(45deg)
       transform: rotate(45deg)
+
     &:after
+      -webkit-transform: rotate(135deg)
       transform: rotate(135deg)
 
 .modal-title
@@ -855,18 +1077,73 @@ footer
 
 .modal-body
   padding: 0
+
   .form
     width: 100%
     margin: 0 auto
     max-width: 300px
+
     label
       width: 100%
       margin: 0 0 15px
       max-width: none
+
     button
       margin: 0 auto
 
-/*==========  modal end  ==========*/
+.contacts-section
+  margin: 0 0 127px
+
+.contacts-section-wrapper
+  background: $accent
+  color: #fff
+  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.15)
+  border-radius: 10px
+  padding: 23px 28px 29px
+  h2
+    color: #fff
+    font-size: 24px
+    margin: 0 0 31px
+  .form
+    max-width: 176px
+    button
+      margin: 0
+      width: 100%
+    label
+      margin: 0 0 20px
+    input
+      border: 1px solid #fff
+        radius: 5px
+      font-size: 14px
+      padding: 0 18px
+      height: 40px
+      color: #FFFFFF
+      &::placeholder
+        color: #FFFFFF
+  h3
+    margin: 0 0 8px
+  .box-text
+    margin: 0 0 27px
+    max-width: 157px
+
+.map
+  width: 100%
+  max-width: 580px
+  height: 270px
+  border-radius: 10px
+  overflow: hidden
+  iframe
+    width: 100%
+    height: 100%
+
+.consent
+  margin: 11px auto 0
+  text-align: center
+  max-width: 176px
+  color: #7084B8
+  font-size: 9px
+
+/*==========  modal end  ==========
+
 
 @import "media"
-// Всегда в конце
